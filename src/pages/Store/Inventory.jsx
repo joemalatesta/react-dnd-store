@@ -1,9 +1,14 @@
-const Inventory = ({item}) => {
+const Inventory = (props) => {
 	
 		return (
 
 		<li >
-			{item.name}
+			
+			{props.item.name}
+			{props.isList
+				? <button disabled={props.disabled} onClick={() => props.addToPlayer(props.item)}>+</button>
+				: <button onClick={() => props.removeFromPlayer(props.idx)}>X</button>
+			}
 		</li>
 		)
 	
