@@ -7,12 +7,14 @@ import MonsterList from './pages/MonsterList/MonsterList'
 import MonsterDetails from './pages/MonsterDetails/MonsterDetails'
 import SpellSearch from './pages/SpellSearch/SpellSearch';
 import SpellDetails from './pages/SpellDetails/SpellDetails';
+import Store from './pages/Store/Store';
 
 function App() {
   return (
     <>
       <NavBar />
       <Routes>
+        <Route path="/store" element={<Store />}/>
         <Route path="/class-list" element={<ClassList />} />
         <Route path="/class" element={<ClassDetails />} />
         <Route path="/monster-list" element={<MonsterList />} />
