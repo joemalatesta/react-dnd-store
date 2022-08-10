@@ -4,24 +4,15 @@ import InventoryList from './InventoryList'
 import PlayerInventory from './PlayerInventory'
 
 
-const Store = (props) => {
-
+const Store = () => {
   const [bought, setBought] = useState([])
-
+  const [equipped, setEquipped]=useState(false)
   const addToPlayer = (item) => {
     setBought([item, ...bought])
   }
 
   const removeFromPlayer = (idx) => {
     setBought(bought.filter((ing, i) => i !== idx))
-  }
-
-  const equipItem = () => {
-    
-  }
-
-  const unequipItem = () => {
-
   }
 
   return ( 
@@ -36,9 +27,7 @@ const Store = (props) => {
         <nav>
           <h1>Players Inventory</h1>
         </nav>
-          <section>
-            <PlayerInventory inventory={bought} equipItem={equipItem} unequipItem={unequipItem} removeFromPlayer={removeFromPlayer}/>
-          </section>
+            <PlayerInventory inventory={bought} equipped={equipped} setEquipped={setEquipped} removeFromPlayer={removeFromPlayer}/>
       </div>
     </>
    )

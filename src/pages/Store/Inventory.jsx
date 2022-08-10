@@ -1,17 +1,13 @@
 const Inventory = (props) => {
-	
 		return (
-
-		<li >
-			
-			{props.item.name}
+		<ul className="margin">
 			{props.isList
-				? <button disabled={props.disabled} onClick={() => props.addToPlayer(props.item)}>+</button>
-				: <button onClick={() => props.removeFromPlayer(props.idx)}>X</button>
+				? <button disabled={props.disabled} onClick={() => props.addToPlayer(props.item)}>Add</button>
+				: <button onClick={() => props.removeFromPlayer(props.idx)}>Remove</button>
 			}
-		</li>
+			--{props.item.name}
+		</ul>
 		)
-	
 }
 
 export default Inventory

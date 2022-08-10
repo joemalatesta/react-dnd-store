@@ -1,6 +1,7 @@
 import Inventory from "./Inventory"
 
 const PlayerInventory = (props) => {
+  
   return (
     <ul>
       {props.inventory.length
@@ -11,8 +12,9 @@ const PlayerInventory = (props) => {
             idx={idx}
             item={item}
             removeFromPlayer={props.removeFromPlayer}
+            equipped={props.equipped} 
+            setEquipped={props.setEquipped}
             />
-          <button>Equip Item</button>
         </>
         ))
       :
