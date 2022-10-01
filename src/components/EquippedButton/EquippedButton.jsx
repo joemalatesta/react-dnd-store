@@ -1,8 +1,6 @@
 
 const EquippedButton = (props) => {
 
- 
-  console.log(props.equipped);
   return (
     <>
       {props.equipped === true
