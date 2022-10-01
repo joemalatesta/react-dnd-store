@@ -1,12 +1,18 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { inventory } from "../../data/store-data"
 import InventoryList from './InventoryList'
 import PlayerInventory from './PlayerInventory'
 
 
+
+
 const Store = () => {
   const [bought, setBought] = useState([])
-  const [equipped, setEquipped]=useState(false)
+
+  useEffect(() => {
+		
+	}, [bought])
+  
   const addToPlayer = (item) => {
     setBought([item, ...bought])
   }
@@ -14,6 +20,8 @@ const Store = () => {
   const removeFromPlayer = (idx) => {
     setBought(bought.filter((ing, i) => i !== idx))
   }
+
+ 
 
   return ( 
     <>
@@ -24,10 +32,11 @@ const Store = () => {
         <section>
           <InventoryList inventory={inventory} bought={bought} addToPlayer={addToPlayer}/>
         </section>
-        <nav>
+        <section>
           <h1>Players Inventory</h1>
-        </nav>
-            <PlayerInventory inventory={bought} equipped={equipped} setEquipped={setEquipped} removeFromPlayer={removeFromPlayer}/>
+          <PlayerInventory inventory={bought} removeFromPlayer={removeFromPlayer}/>
+        </section>
+        
       </div>
     </>
    )
