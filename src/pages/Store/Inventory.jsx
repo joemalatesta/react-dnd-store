@@ -5,12 +5,9 @@ const Inventory = (props) => {
 	const [equipped, setEquipped]=useState(false)
 
   const handleEquip = () => {
-    
     setEquipped(!equipped)
-    console.log('equipped', equipped);
   }
-
-
+	
 		return (
 		<li className="margin"  >
 			{props.isList
