@@ -5,7 +5,7 @@ const PlayerInventory = (props) => {
  
 
   return (
-    <div store-inventories>
+    <div>
       <ul className="store-items">
         {props.inventory.length
         ?  props.inventory.map((item, idx) => (
