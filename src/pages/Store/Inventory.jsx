@@ -9,16 +9,16 @@ const Inventory = (props) => {
   }
 	
 		return (
-		<li className="margin"  >
+		<ul>
 			{props.isList
-				? <button disabled={props.disabled} onClick={() => props.addToPlayer(props.item)}>Add</button>
+				? <button className='margin' disabled={props.disabled} onClick={() => props.addToPlayer(props.item)}>+</button>
 				: <>
-						<button onClick={() => props.removeFromPlayer(props.idx)}>Remove</button>
+						<button className='margin' onClick={() => props.removeFromPlayer(props.idx)}>X</button>
 						<EquippedButton handleEquip={handleEquip} equipped={equipped}/>
 					</>
 			}
-			--{props.item.name}
-		</li>
+			{props.item.name}
+		</ul>
 		)
 }
 

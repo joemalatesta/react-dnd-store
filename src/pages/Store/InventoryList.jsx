@@ -2,7 +2,7 @@ import Inventory from "./Inventory"
 
 const InventoryList = (props) => {
 	return (
-		<ul>
+		<ul className='store-items'>
 			{props.inventory.map((item, idx) =>
 				<Inventory
 					key={idx}

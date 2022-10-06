@@ -12,6 +12,14 @@ body {
   border-radius: 50%;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 10s linear;
@@ -62,5 +70,33 @@ body {
 }
 
 .margin{
-  margin: 5px;
+  margin: 10px;
+}
+
+.store-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: clamp(400px, 80vw, 1200px);
+  margin: auto;
+  justify-content:space-between;
+}
+
+.store-inventories {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid black;
+  justify-items: center;
+  align-items: center;
+  padding: 15px;
+  margin: 1rem;
+  height: 500px;
+}
+.store-items {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-height: 350px;
 }

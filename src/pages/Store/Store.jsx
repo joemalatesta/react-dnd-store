@@ -27,14 +27,16 @@ const Store = () => {
     <>
       <div>
         <nav>
-          <h1>Adventurer's Shop</h1>
         </nav>
-        <section>
-          <InventoryList inventory={inventory} bought={bought} addToPlayer={addToPlayer}/>
-        </section>
-        <section>
-          <h1>Players Inventory</h1>
-          <PlayerInventory inventory={bought} removeFromPlayer={removeFromPlayer}/>
+        <section className="store-container">
+          <div>
+            <h1>Adventurer's Shop</h1>
+            <InventoryList inventory={inventory} bought={bought} addToPlayer={addToPlayer}/>
+          </div>
+          <div>
+            <h1>Players Inventory</h1>
+            <PlayerInventory inventory={bought} removeFromPlayer={removeFromPlayer}/>
+          </div>
         </section>
         
       </div>
