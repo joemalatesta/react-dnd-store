@@ -13,8 +13,8 @@ const Inventory = (props) => {
 			{props.isList
 				? <button className='margin' disabled={props.disabled} onClick={() => props.addToPlayer(props.item)}>+</button>
 				: <>
-						<button className='margin' onClick={() => props.removeFromPlayer(props.idx)}>X</button>
-						<EquippedButton handleEquip={handleEquip} equipped={equipped}/>
+						<button className='margin' onClick={() => props.removeFromPlayer(props.item)}>X</button>
+						<EquippedButton item={props.item} handleEquip={handleEquip} equipped={equipped}/>
 					</>
 			}
 			{props.item.name}

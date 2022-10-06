@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { inventory } from "../../data/store-data"
+import { inventoryData } from "../../data/store-data"
 import InventoryList from './InventoryList'
 import PlayerInventory from './PlayerInventory'
 
@@ -7,21 +7,26 @@ import PlayerInventory from './PlayerInventory'
 
 
 const Store = () => {
-  const [bought, setBought] = useState([])
+  const [inventory, setInv] = useState([])
+  const [playerInv, setPlayerInv] = useState([])
+  
+  useEffect(() => {
+		setInv(inventoryData)
+	}, [])
 
   useEffect(() => {
 		
-	}, [bought])
+	}, [inventory,playerInv])
   
   const addToPlayer = (item) => {
-    setBought([item, ...bought])
+    setInv(inventory.filter((obj)=> obj.id !== item.id))
+    setPlayerInv([item, ...playerInv])
   }
 
-  const removeFromPlayer = (idx) => {
-    setBought(bought.filter((ing, i) => i !== idx))
+  const removeFromPlayer = (item) => {
+    setPlayerInv(playerInv.filter((obj)=> obj !== item))
+    setInv([item, ...inventory])
   }
-
- 
 
   return ( 
     <>
@@ -29,13 +34,13 @@ const Store = () => {
         <nav>
         </nav>
         <section className="store-container">
-          <div>
+          <div className="store-inventories">
             <h1>Adventurer's Shop</h1>
-            <InventoryList inventory={inventory} bought={bought} addToPlayer={addToPlayer}/>
+            <InventoryList inventory={inventory} addToPlayer={addToPlayer}/>
           </div>
-          <div>
+          <div className="store-inventories">
             <h1>Players Inventory</h1>
-            <PlayerInventory inventory={bought} removeFromPlayer={removeFromPlayer}/>
+            <PlayerInventory playerInv={playerInv} removeFromPlayer={removeFromPlayer}/>
           </div>
         </section>
         

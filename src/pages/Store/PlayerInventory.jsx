@@ -7,12 +7,11 @@ const PlayerInventory = (props) => {
   return (
     <div>
       <ul className="store-items">
-        {props.inventory.length
-        ?  props.inventory.map((item, idx) => (
+        {props.playerInv.length
+        ?  props.playerInv.map((item) => (
           <Inventory
           islist={false}
-          key={idx}
-          idx={idx}
+          key={item.id}
           item={item}
           removeFromPlayer={props.removeFromPlayer}
           />
