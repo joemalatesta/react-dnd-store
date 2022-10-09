@@ -91,3 +91,6 @@ a:visited {
   flex-direction: column;
   max-height: 470px;
 }
+button {
+    border-radius:10px;
+}

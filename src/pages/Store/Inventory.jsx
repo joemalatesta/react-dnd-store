@@ -11,9 +11,9 @@ const Inventory = (props) => {
 		return (
 		<ul>
 			{props.isList
-				? <button className='margin' disabled={props.disabled} onClick={() => props.addToPlayer(props.item)}>+</button>
+				? <button className='margin' style={{ background:'green', color:'white' }} disabled={props.disabled} onClick={() => props.addToPlayer(props.item)}>+</button>
 				: <>
-						<button className='margin' onClick={() => props.removeFromPlayer(props.item)}>X</button>
+						<button className='margin' style={{ background:'red', color:'white'}} onClick={() => props.removeFromPlayer(props.item)}>X</button>
 						<EquippedButton item={props.item} handleEquip={handleEquip} equipped={equipped}/>
 					</>
 			}
