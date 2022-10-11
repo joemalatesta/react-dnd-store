@@ -1,4 +1,3 @@
-import { isContentEditable } from "@testing-library/user-event/dist/utils"
 import Inventory from "./Inventory"
 
 const InventoryList = (props) => {

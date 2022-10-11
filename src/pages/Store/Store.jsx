@@ -7,16 +7,8 @@ import PlayerInventory from './PlayerInventory'
 
 
 const Store = () => {
-  const [inventory, setInv] = useState([])
+  const [inventory, setInv] = useState(inventoryData)
   const [playerInv, setPlayerInv] = useState([])
-  
-  useEffect(() => {
-		setInv(inventoryData)
-	}, [])
-
-  useEffect(() => {
-		
-	}, [inventory,playerInv])
   
   const addToPlayer = (item) => {
     setInv(inventory.filter((obj)=> obj.id !== item.id))
@@ -30,21 +22,16 @@ const Store = () => {
 
   return ( 
     <>
-      <div>
-        <nav>
-        </nav>
-        <section className="store-container">
-          <div className="store-inventories">
-            <h1>Adventurer's Shop</h1>
-            <InventoryList inventory={inventory} addToPlayer={addToPlayer}/>
-          </div>
-          <div className="store-inventories">
-            <h1>Players Inventory</h1>
-            <PlayerInventory playerInv={playerInv} removeFromPlayer={removeFromPlayer}/>
-          </div>
-        </section>
-        
-      </div>
+      <section className="store-container">
+        <div className="store-inventories">
+          <h1>Adventurer's Shop</h1>
+          <InventoryList inventory={inventory} addToPlayer={addToPlayer}/>
+        </div>
+        <div className="store-inventories">
+          <h1>Player's Backpack</h1>
+          <PlayerInventory playerInv={playerInv} removeFromPlayer={removeFromPlayer}/>
+        </div>
+      </section>
     </>
    )
 }
